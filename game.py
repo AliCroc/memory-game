@@ -54,7 +54,7 @@ def init_game(column, rows):
     while True:
         print("WELCOME IN MEMORY GAME")
         level = input("Choose difficulty level (E)asy/(M)edium/(H)ard: \n").lower()
-        if level in ["e","m","h"]:
+        if level in ["e", "m", "h"]:
             rows = set_difficulty(level)
             break
         else:
@@ -94,13 +94,10 @@ def set_coordinates(hashed, gameboard, list):
     global symbols, coordianates_A
     while True:
         coord = input("Type in coordinates of desired pick (ex. B2): \n").upper()
-        print(coord)
         if len(coord) == 2:
             x = list(coord)
-            print(x)
             if x[0].isalpha() == True and x[1].isdigit() == True and x[0] in coordianates_A:
                 index = symbols.index(x[0])
-                print(index)
                 if hashed[index][x[1]] != '#':
                     print("This was already used")
                     continue
