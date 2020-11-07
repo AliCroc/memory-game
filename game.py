@@ -101,6 +101,9 @@ def set_coordinates(hashed, gameboard, list):
             if x[0].isalpha() == True and x[1].isdigit() == True and x[0] in coordianates_A:
                 index = symbols.index(x[0])
                 print(index)
+                if hashed[index][x[1]] != '#':
+                    print("This was already used")
+                    continue
                 hashed[index][x[1]] = gameboard[index][x[1]]
                 break
             else:
